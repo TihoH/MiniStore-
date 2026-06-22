@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="header container">
+      <span class="header__logo">MiniStore.</span>
+      <div class="header__links">
+        <ul class="header__links-items">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="#">Pages</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="#">Blogs</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="header__iacons">
+          <img src="./assets/images/icons/ion_search.svg" alt="" />
+          <img src="./assets/images/icons/ion_person.svg" alt="" />
+          <div class="header__cart">
+            <img src="./assets/images/icons/cart.svg" alt="" />
+            <span class="header__cart-lenth"></span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <!-- Banner -->
+      <section class="banner">
+        <div class="container banner__container">
+          <div class="banner__title">
+            <h1>Your Products are great.</h1>
+            <button class="baseBtn-black banner__title-btn">
+              Shop Product
+            </button>
+          </div>
+          <div class="banner__banner-image">
+            <img src="./assets/images/banner/homeBanner.png" alt="" />
+          </div>
+        </div>
+      </section>
+      <!-- features -->
+      <section class="features container">
+        <div class="features__cell">
+          <div>
+            <img
+              src="./assets/images/icons/main1.svg"
+              class="features__icon"
+              alt="Free delivery"
+            />
+          </div>
+          <div>
+            <p class="features__title">Free delivery</p>
+            <span>Consectetur adipi elit lorem ipsum dolor sit amet.</span>
+          </div>
+        </div>
+        <div class="features__cell">
+          <div>
+            <img
+              src="./assets/images/icons/Group.svg"
+              class="features__icon"
+              alt="Quality guarantee"
+            />
+          </div>
+          <div>
+            <p class="features__title">Quality guarantee</p>
+            <span>Dolor sit amet orem ipsu mcons ectetur adipi elit.</span>
+          </div>
+        </div>
+        <div class="features__cell">
+          <div>
+            <img
+              src="./assets/images/icons/main3.svg"
+              class="features__icon"
+              alt="Daily offers "
+            />
+          </div>
+          <div>
+            <p class="features__title">Daily offers</p>
+            <span>Amet consectetur adipi elit loreme ipsum dolor sit.</span>
+          </div>
+        </div>
+        <div class="features__cell">
+          <div>
+            <img
+              src="./assets/images/icons/main4.svg"
+              class="features__icon"
+              alt="secure payment"
+            />
+          </div>
+          <div>
+            <p class="features__title">100% secure payment</p>
+            <span>Rem Lopsum dolor sit amet, consectetur adipi elit.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Рендер JS Mobille-->
+      <section class="mobile-products group-products container">
+        <div class="group-products__info">
+          <h2>Mobile Products</h2>
+          <button>Go to Shop</button>
+        </div>
+        <!-- Рендер JS Mobille-->
+        <ul class="group-products__render group-products__render-phone"></ul>
+        <div class="group-products__render-dots"></div>
+      </section>
+
+      <!-- Рендер JS watch-->
+      <section class="watches-products group-products container">
+        <div class="group-products__info">
+          <h2>Smart Watches</h2>
+          <button>Go to Shop</button>
+        </div>
+        <!-- Рендер JS watch-->
+        <ul class="group-products__render group-products__render-watch"></ul>
+
+        <div class="group-products__render-dots"></div>
+      </section>
+
+      <!-- New year sale -->
+      <section class="sale-main">
+        <div class="container sale-main__container">
+          <span>10% off</span>
+          <h2>New year sale</h2>
+          <button class="baseBtn-black">Shop sale</button>
+        </div>
+      </section>
+
+      <!-- blogs-->
+      <section class="blogs group-products container">
+        <div class="blogs group-products__info">
+          <h2>Latest Posts</h2>
+          <button>Read blogs</button>
+        </div>
+
+        <div class="blogs__posts">
+          <div>
+            <img
+              src="./assets/images/blog/david-svihovec-uyu_IZPC73U-unsplash.png"
+              alt=""
+            />
+            <div class="blogs__posts-description">
+              <span>feb 22, 2023 - Gadgets</span>
+              <h3>Get some cool gadgets in 2023</h3>
+            </div>
+          </div>
+          <div>
+            <img
+              src="./assets/images/blog/matthew-brodeur-oSvR0wGYUBs-unsplash.png"
+              alt=""
+            />
+            <div class="blogs__posts-description">
+              <span>feb 22, 2023 - Gadgets</span>
+              <h3>Get some cool gadgets in 2023</h3>
+            </div>
+          </div>
+          <div>
+            <img
+              src="./assets/images/blog/eniko-kis-KsLPTsYaqIQ-unsplash 1.png"
+              alt=""
+            />
+            <div class="blogs__posts-description">
+              <span>feb 22, 2023 - Gadgets</span>
+              <h3>Get some cool gadgets in 2023</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- comments-slider -->
+      <section class="comments-slider container">
+        <div class="comments-slider__wrapper">
+          <div class="comments-slider__item">
+            <img src="./assets/images/icons/comment.png" alt="" />
+            <p>
+              “The quality of the products exceeded my expectations. The
+              delivery was fast, the packaging was excellent, and the customer
+              support team was very helpful throughout the whole process.”
+            </p>
+
+            <div class="comments-slider__author-block">
+              <span class="comments-slider__rating">
+                <img src="./assets/images/icons/ion_star.png" alt="rating" />
+                <img src="./assets/images/icons/ion_star.png" alt="rating" />
+                <img src="./assets/images/icons/ion_star.png" alt="rating" />
+                <img src="./assets/images/icons/ion_star.png" alt="rating" />
+                <img src="./assets/images/icons/ion_star.png" alt="rating" />
+              </span>
+
+              <span class="comments-slider__author">Michael Johnson</span>
+            </div>
+          </div>
+
+          <div class="comments-slider__item">
+            <img src="./assets/images/icons/comment.png" alt="" />
+            <p>
+              “I have ordered several devices from this store and every
+              experience has been fantastic. Great prices, premium quality, and
+              a user-friendly shopping process.”
+            </p>
+
+            <div class="comments-slider__author-block">
+              <span class="comments-slider__rating">
+                <img src="./assets/images/icons/ion_star.png" alt="rating" />
+                <img src="./assets/images/icons/ion_star.png" alt="rating" />
+                <img src="./assets/images/icons/ion_star.png" alt="rating" />
+                <img src="./assets/images/icons/ion_star.png" alt="rating" />
+                <img src="./assets/images/icons/ion_star.png" alt="rating" />
+              </span>
+
+              <span class="comments-slider__author">Sophia Williams</span>
+            </div>
+          </div>
+
+          <div class="comments-slider__item">
+            <img src="./assets/images/icons/comment.png" alt="" />
+            <p>
+              “Amazing service and high-quality gadgets. My smartwatch arrived
+              earlier than expected and works perfectly. I will definitely
+              recommend this store to my friends.”
+            </p>
+
+            <div class="comments-slider__author-block">
+              <span class="comments-slider__rating">
+                <img src="./assets/images/icons/ion_star.png" alt="rating" />
+                <img src="./assets/images/icons/ion_star.png" alt="rating" />
+                <img src="./assets/images/icons/ion_star.png" alt="rating" />
+                <img src="./assets/images/icons/ion_star.png" alt="rating" />
+                <img src="./assets/images/icons/ion_star.png" alt="rating" />
+              </span>
+
+              <span class="comments-slider__author">Daniel Brown</span>
+            </div>
+          </div>
+        </div>
+        <img
+          class="comments-slider__arr comments-slider__arr-left"
+          src="./assets/images/icons/leftArr.png"
+          alt=""
+        />
+        <img
+          class="comments-slider__arr comments-slider__arr-right"
+          src="./assets/images/icons/rightArr.png"
+          alt=""
+        />
+      </section>
+
+      <!-- subscribe -->
+      <section class="subscribe container">
+        <div class="subscribe__title">
+          <h3>Subscribe Us now</h3>
+          <p>
+            Get latest news, updates and deals directly mailed to your inbox.
+          </p>
+        </div>
+        <div class="subscribe__submitEmail">
+          <input type="text" placeholder="Your email address here" />
+          <button>subscribe</button>
+        </div>
+      </section>
+
+      <!-- Shop our insta -->
+      <section class="shop-Or-Insta container">
+        <h3>Shop our insta</h3>
+        <div class="shop-Or-Insta__images">
+          <img
+            src="./assets/images/products/shopOrInsta/Rectangle 172.png"
+            alt=""
+          />
+          <img
+            src="./assets/images/products/shopOrInsta/Rectangle 173.png"
+            alt=""
+          />
+          <img
+            src="./assets/images/products/shopOrInsta/Rectangle 174.png"
+            alt=""
+          />
+          <img
+            src="./assets/images/products/shopOrInsta/Rectangle 176.png"
+            alt=""
+          />
+          <img
+            src="./assets/images/products/shopOrInsta/Rectangle 175.png"
+            alt=""
+          />
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__top">
+          <!-- 1 колонка -->
+          <div class="footer__column footer__column-logo">
+            <a href="#" class="footer__logo">MiniStore<span>.</span></a>
+
+            <p class="footer__description">
+              Nisi, purus vitae, ultrices nunc. Sit ac sit suscipit hendrerit.
+              Gravida massa volutpat aenean odio erat nullam fringilla.
+            </p>
+
+            <div class="footer__socials">
+              <a href="#" class="footer__social">f</a>
+              <a href="#" class="footer__social">◎</a>
+              <a href="#" class="footer__social">t</a>
+              <a href="#" class="footer__social">in</a>
+              <a href="#" class="footer__social">▶</a>
+            </div>
+          </div>
+
+          <!-- 2 колонка -->
+          <div class="footer__column">
+            <h3 class="footer__title">QUICK LINKS</h3>
+
+            <ul class="footer__list">
+              <li>
+                <a href="#" class="footer__link footer__link-active">HOME</a>
+              </li>
+              <li><a href="#" class="footer__link">ABOUT</a></li>
+              <li><a href="#" class="footer__link">SHOP</a></li>
+              <li><a href="#" class="footer__link">BLOGS</a></li>
+              <li><a href="#" class="footer__link">CONTACT</a></li>
+            </ul>
+          </div>
+
+          <!-- 3 колонка -->
+          <div class="footer__column">
+            <h3 class="footer__title">HELP & INFO</h3>
+
+            <ul class="footer__list">
+              <li><a href="#" class="footer__link">TRACK YOUR ORDER</a></li>
+              <li><a href="#" class="footer__link">RETURNS POLICIES</a></li>
+              <li><a href="#" class="footer__link">SHIPPING + DELIVERY</a></li>
+              <li><a href="#" class="footer__link">CONTACT US</a></li>
+              <li><a href="#" class="footer__link">FAQS</a></li>
+            </ul>
+          </div>
+
+          <!-- 4 колонка -->
+          <div class="footer__column footer__contacts">
+            <h3 class="footer__title">CONTACT US</h3>
+
+            <p class="footer__contact-text">
+              Do you have any queries or suggestions?
+              <a href="mailto:yourinfo@gmail.com" class="footer__contact-link">
+                yourinfo@gmail.com
+              </a>
+            </p>
+
+            <p class="footer__contact-text">
+              If you need support? Just give us a call.
+              <a href="tel:+5511122233344" class="footer__contact-link">
+                +55 111 222 333 44
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__line"></div>
+
+      <div class="footer__container">
+        <div class="footer__bottom">
+          <div class="footer__bottom-block">
+            <span class="footer__bottom-text">We ship with:</span>
+            <span class="footer__delivery">DHL</span>
+            <span class="footer__delivery">VC</span>
+          </div>
+
+          <div class="footer__bottom-block">
+            <span class="footer__bottom-text">Payment options:</span>
+            <span class="footer__payment">VISA</span>
+            <span class="footer__payment">MC</span>
+            <span class="footer__payment">PayPal</span>
+          </div>
+
+          <p class="footer__copyright">
+            © Copyright 2023 MiniStore. Design by
+            <a href="#" class="footer__copyright-link">TemplatesJungle</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./assets/js/header/header.js"></script>
+    <script type="module" src="./assets/js/app.js/app.js"></script>
+      <script type="module" src="./assets/js/cart.js"></script>
+  </body>
+</html>

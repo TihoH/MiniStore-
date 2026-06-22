@@ -1,0 +1,14 @@
+
+.about{
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+}
+
+.about .features{
+    margin-top: 120px;
+}
+.about__about{
+    background-color: var(--bgSectionBredcrumbs);
+    height: 281px;
+}

@@ -1,0 +1,14 @@
+@import url('/assets/styles/base.css');
+@import url('/assets/styles/reset.css');
+@import url('/assets/styles/variables.css');
+@import url('/assets/styles/header.css');
+@import url('/assets/styles/main/banner.css');
+@import url('/assets/styles/main/features.css');
+@import url('/assets/styles/components/cardProduct.css');
+@import url('/assets/styles/footer.css');
+@import url('/assets/styles/main/saleMain.css');
+@import url('/assets/styles/main/blog.css');
+@import url('/assets/styles/main/comments-slider.css');
+@import url('/assets/styles/main/subscribe.css');
+@import url('/assets/styles/main/shop-Or-Insta.css');
+@import url('/assets/styles/pages/about.css');

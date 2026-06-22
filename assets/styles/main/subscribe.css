@@ -1,0 +1,41 @@
+.subscribe{
+    background-color: #272727;
+    height: 226px;
+      display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 110px 80px;
+}
+
+.subscribe h3{
+    font-size: 30px;
+    text-transform: uppercase;
+    color:white
+}
+.subscribe p{
+    color: white;
+    font-weight: 200;
+    font-size: 16px;
+    letter-spacing: 2%;
+}
+.subscribe__submitEmail{
+    width: 495px;
+    display: flex;
+
+}
+
+.subscribe__submitEmail button {
+    max-width: 166px;
+    width: 100%;
+    padding: 16px  40px; 
+    background-color: #72AEC8;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+}
+.subscribe__submitEmail input{
+    width: 100%;
+        padding: 16px 30px;
+}

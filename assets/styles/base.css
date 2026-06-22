@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "Jost";
+  src: url("../fonts/Jost-VariableFont_wght.ttf");
+}
+
+body {
+font-family: "Jost", sans-serif;
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.baseBtn-black{
+  background-color: black;
+  color: white;
+  padding: 16px 50px;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: 0.2s;
+  cursor: pointer;
+  outline: none;
+}
+
+.baseBtn-black:hover {
+  background-color: rgba(128, 127, 127, 0.8);
+}
+
+
+
+.hero{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.hero-title h1{
+  font-size: 83px;
+  font-weight: 300;
+  color: var(--baseTitle);
+}
+.hero-title__bredcrumbs span:first-child{
+  font-size: 16px;
+}
+.hero-title__bredcrumbs span:last-child {
+  color: var(--price);
+}
+.hero-title__bredcrumbs span:last-child::before {
+  content: '>';
+  margin: 0 20px;
+}

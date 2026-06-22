@@ -1,0 +1,97 @@
+
+.group-products{
+    overflow-x: hidden;
+}
+.group-products__render{
+    display: flex;
+        gap: 20px;
+        /* transform: translateX(-400px); */
+        transition: 0.3s;
+}
+
+.group-products__item{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.group-products__info h2{
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.group-products__info button{
+    background-color: white;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 14px;
+    position: relative;
+    cursor: pointer;
+
+}
+.group-products__info button:hover::before{
+    border-bottom: 2px solid red;
+}
+
+.group-products__info button::before{
+    content: '';
+    border-bottom: 2px solid black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: #E5E5E5;
+        transition: 0.4s;
+}
+.group-products__item img {
+  width: 310px;
+  max-height: 420px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.group-products__info{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.group-products__info-product {
+    display: flex;
+    margin-bottom: 30px;
+    gap: 10px;
+      justify-content: space-between;
+      padding: 10px 25px;
+}
+.group-products__item:hover {
+    background-color: rgb(223, 223, 223);
+}
+.group-products__price{
+    color: var(--price);
+}
+
+
+
+
+/* Кнопки слайдера */
+.group-products__render-dots{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.group-products__dots{
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: #D3D3D3;
+    display: block;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.activeDots{
+    background-color: aqua;
+}
+.group-products__dots:hover{
+    /* scale: 120%; */
+}

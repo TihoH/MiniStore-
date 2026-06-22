@@ -1,0 +1,19 @@
+.blogs__posts{
+    display: flex;
+    gap: 20px;
+}
+.blogs__posts-description{
+    display: flex;
+    flex-direction: column;
+}
+.blogs__posts-description :first-child{
+    color: var(--baseGray);
+    font-size: 13px;
+    text-transform: uppercase;
+}
+.blogs__posts-description h3{
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--baseTitle);
+}

@@ -1,0 +1,24 @@
+.banner{
+     background-color: #EDF1F3;
+     height: 612px;
+
+}
+
+.banner__container{
+         display: flex;
+     align-items: center;
+     height: 100%;
+     
+}
+.banner__title{
+    margin-left: 20px;
+}
+h1 {
+    font-size: 83px;
+    max-width: 670px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+.banner__title-btn{
+    margin-top: 40px;
+}

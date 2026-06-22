@@ -1,0 +1,20 @@
+.features{
+    display: flex;
+    gap: 55px;
+}
+.features__cell{
+    display: flex;
+    gap: 19px;
+}
+.features__title{
+    font-size: 20px;
+    text-transform: uppercase;
+    color: var(--baseTitle);
+}
+.features__cell span{
+     color: var(--baseGray);
+}
+
+.features__icon{
+    margin-top: 4px;
+}
