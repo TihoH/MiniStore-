@@ -1,6 +1,6 @@
 let activeIndexDots = 0;
 
-export function renderProducts(arr, className) {
+export function renderProducts(arr, className , activeDots = true) {
   const mobileProductsRender = document.querySelector(`${className}`);
 
   arr.forEach((item) => {
@@ -11,14 +11,18 @@ export function renderProducts(arr, className) {
             <div class='group-products__info-product'> 
                 <span> ${item.title} </span> 
                 <span class="group-products__price">$ ${item.price} </span> 
-                <button data-id=${item.id} class="group-products__add-product"> add </button>
             </div>
+                          <button data-id=${item.id} class="group-products__add-product baseBtn-black"> Add to cart  </button>
         `;
+
+        // <img src="../images/icons/ion_cart.svg" />
 
     mobileProductsRender.append(li);
   });
 
-  renderDots(arr, mobileProductsRender);
+  if(activeDots){
+      renderDots(arr, mobileProductsRender)
+  }
 }
 
 

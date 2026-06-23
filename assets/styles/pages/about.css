@@ -12,3 +12,30 @@
     background-color: var(--bgSectionBredcrumbs);
     height: 281px;
 }
+
+.ministore-found{
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+
+.ministore-found__desription{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.ministore-found__desription p{
+    color: var(--baseGray);
+    font-weight: 300;
+}
+.ministore-found__btn{
+    margin-top: 40px;
+      width: fit-content;
+    
+}
+.ministore-found__title{
+    font-size: 30px;
+    text-transform: uppercase;
+    color: var(--baseTitle);
+    font-weight: 400;
+}

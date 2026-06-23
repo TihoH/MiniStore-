@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="header container">
+      <span class="header__logo">MiniStore.</span>
+      <div class="header__links">
+        <ul class="header__links-items">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/Shop.html">Shop</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="#">Blogs</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="header__iacons">
+          <img src="./assets/images/icons/ion_search.svg" alt="" />
+          <img src="./assets/images/icons/ion_person.svg" alt="" />
+          <div class="header__cart">
+            <img src="./assets/images/icons/cart.svg" alt="" />
+            <span class="header__cart-lenth"></span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="about__about hero">
+      <div class="about__wrapper container">
+        <h1 class="about__title hero-title">Shop</h1>
+        <p class="hero-title__bredcrumbs">
+          <span>Home</span>
+          <span>Shop</span>
+        </p>
+      </div>
+    </section>
+
+    <main class="shop container">
+      <section class="shop__produts">
+        <ul class="shop__list"></ul>
+        <div class="shop__filters">
+          <div class="shop__filters-gropup">
+            <h5>Categories</h5>
+            <ul class="shop__render-filterCategories"></ul>
+          </div>
+          <div class="shop__filters-gropup">
+            <h5>Tags</h5>
+            <ul class="shop__render-filterTags"></ul>
+          </div>
+                    <div class="shop__filters-gropup">
+            <h5>Brands</h5>
+            <ul class="shop__render-filterBrands"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__top">
+          <!-- 1 колонка -->
+          <div class="footer__column footer__column-logo">
+            <a href="#" class="footer__logo">MiniStore<span>.</span></a>
+
+            <p class="footer__description">
+              Nisi, purus vitae, ultrices nunc. Sit ac sit suscipit hendrerit.
+              Gravida massa volutpat aenean odio erat nullam fringilla.
+            </p>
+
+            <div class="footer__socials">
+              <a href="#" class="footer__social">f</a>
+              <a href="#" class="footer__social">◎</a>
+              <a href="#" class="footer__social">t</a>
+              <a href="#" class="footer__social">in</a>
+              <a href="#" class="footer__social">▶</a>
+            </div>
+          </div>
+
+          <!-- 2 колонка -->
+          <div class="footer__column">
+            <h3 class="footer__title">QUICK LINKS</h3>
+
+            <ul class="footer__list">
+              <li>
+                <a href="#" class="footer__link footer__link-active">HOME</a>
+              </li>
+              <li><a href="#" class="footer__link">ABOUT</a></li>
+              <li><a href="#" class="footer__link">SHOP</a></li>
+              <li><a href="#" class="footer__link">BLOGS</a></li>
+              <li><a href="#" class="footer__link">CONTACT</a></li>
+            </ul>
+          </div>
+
+          <!-- 3 колонка -->
+          <div class="footer__column">
+            <h3 class="footer__title">HELP & INFO</h3>
+
+            <ul class="footer__list">
+              <li><a href="#" class="footer__link">TRACK YOUR ORDER</a></li>
+              <li><a href="#" class="footer__link">RETURNS POLICIES</a></li>
+              <li><a href="#" class="footer__link">SHIPPING + DELIVERY</a></li>
+              <li><a href="#" class="footer__link">CONTACT US</a></li>
+              <li><a href="#" class="footer__link">FAQS</a></li>
+            </ul>
+          </div>
+
+          <!-- 4 колонка -->
+          <div class="footer__column footer__contacts">
+            <h3 class="footer__title">CONTACT US</h3>
+
+            <p class="footer__contact-text">
+              Do you have any queries or suggestions?
+              <a href="mailto:yourinfo@gmail.com" class="footer__contact-link">
+                yourinfo@gmail.com
+              </a>
+            </p>
+
+            <p class="footer__contact-text">
+              If you need support? Just give us a call.
+              <a href="tel:+5511122233344" class="footer__contact-link">
+                +55 111 222 333 44
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__line"></div>
+
+      <div class="footer__container">
+        <div class="footer__bottom">
+          <div class="footer__bottom-block">
+            <span class="footer__bottom-text">We ship with:</span>
+            <span class="footer__delivery">DHL</span>
+            <span class="footer__delivery">VC</span>
+          </div>
+
+          <div class="footer__bottom-block">
+            <span class="footer__bottom-text">Payment options:</span>
+            <span class="footer__payment">VISA</span>
+            <span class="footer__payment">MC</span>
+            <span class="footer__payment">PayPal</span>
+          </div>
+
+          <p class="footer__copyright">
+            © Copyright 2023 MiniStore. Design by
+            <a href="#" class="footer__copyright-link">TemplatesJungle</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./assets/js/header/header.js"></script>
+    <script type="module" src="./assets/js/cart.js"></script>
+    <script type="module" src="./assets/js/pages/shop.js"></script>
+  </body>
+</html>
