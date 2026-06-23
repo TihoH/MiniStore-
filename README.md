@@ -2,10 +2,6 @@
 
 MiniStore — учебный проект интернет-магазина, сверстанный по Figma-макету на чистом HTML, CSS и JavaScript.
 
-## Демо
-
-[Посмотреть сайт](https://ministore-five-alpha.vercel.app/)
-
 ## Макет
 
 [MiniStore — Mini Ecommerce Store Website Template](https://www.figma.com/design/d4x6l6QlFZvySghF9z50ru/MiniStore---Mini-Ecommerce-Store-Website-Template--Community-?node-id=17-72&t=7AVgMURSFuVTw7wZ-0)
