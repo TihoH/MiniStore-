@@ -1,6 +1,13 @@
 let activeIndexDots = 0;
+let currentPage = 1;
+const productsPerPage = 8;
 
-export function renderProducts(arr, className , activeDots = true) {
+export function renderProducts(
+  arr,
+  className,
+  activeDots = true,
+  renderPaginstion = false,
+) {
   const mobileProductsRender = document.querySelector(`${className}`);
 
   arr.forEach((item) => {
@@ -12,20 +19,13 @@ export function renderProducts(arr, className , activeDots = true) {
                 <span> ${item.title} </span> 
                 <span class="group-products__price">$ ${item.price} </span> 
             </div>
-                          <button data-id=${item.id} class="group-products__add-product baseBtn-black"> Add to cart  </button>
+            <button data-id=${item.id} class="group-products__add-product baseBtn-black"> Add to cart  </button>
         `;
-
-        // <img src="../images/icons/ion_cart.svg" />
-
     mobileProductsRender.append(li);
   });
 
-  if(activeDots){
-      renderDots(arr, mobileProductsRender)
-  }
+  if (activeDots) renderDots(arr, mobileProductsRender);
 }
-
-
 
 function renderDots(arr, productsRender) {
   const section = productsRender.closest(".group-products");
@@ -55,8 +55,7 @@ function renderDots(arr, productsRender) {
     const slideWidth = 330;
     const activeIndexDots = Number(dot.dataset.index);
 
-    productsRender.style.transform =
-      `translateX(-${slideWidth * activeIndexDots}px)`;
+    productsRender.style.transform = `translateX(-${slideWidth * activeIndexDots}px)`;
 
     dots.querySelectorAll(".group-products__dots").forEach((item) => {
       item.classList.remove("activeDots");
@@ -64,4 +63,30 @@ function renderDots(arr, productsRender) {
 
     dot.classList.add("activeDots");
   };
+}
+
+export function renderPaginationList(arr) {
+  const renderDiv = document.querySelector(".shop__render-pagination-count");
+  const paginationDiv = document.querySelector(".pagination");
+
+  renderDiv.innerHTML = "";
+  if (arr.length <= 8) {
+    paginationDiv.style.display = "none";
+    return;
+  }
+
+  paginationDiv.style.display = "flex";
+
+  const pagesCount = Math.ceil(arr.length / productsPerPage);
+
+  [...new Array(pagesCount)].forEach(( _, index) => {
+    const btnHtml = document.createElement("button");
+    btnHtml.dataset.page = index + 1
+    btnHtml.textContent = `${index + 1}`;
+    if (currentPage === index + 1) {
+      btnHtml.classList.add("active");
+    }
+
+    renderDiv.append(btnHtml);
+  });
 }
