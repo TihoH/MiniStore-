@@ -1,6 +1,8 @@
 let activeIndexDots = 0;
-let currentPage = 1;
-const productsPerPage = 8;
+// let currentPage = 1;
+// const productsPerPage = 8;
+
+const groupProductsItem = document.querySelector('.group-products__item')
 
 export function renderProducts(
   arr,
@@ -14,7 +16,9 @@ export function renderProducts(
     const li = document.createElement("li");
     li.classList.add("group-products__item");
     li.innerHTML = `
-            <img src="${item.image}" alt="${item.title}"> 
+            <a href="/product.html?id=${item.id}"> 
+              <img class="group-products__image" src="${item.image}" alt="${item.title}"> 
+            </a>
             <div class='group-products__info-product'> 
                 <span> ${item.title} </span> 
                 <span class="group-products__price">$ ${item.price} </span> 
@@ -22,10 +26,12 @@ export function renderProducts(
             <button data-id=${item.id} class="group-products__add-product baseBtn-black"> Add to cart  </button>
         `;
     mobileProductsRender.append(li);
+
   });
 
   if (activeDots) renderDots(arr, mobileProductsRender);
 }
+
 
 function renderDots(arr, productsRender) {
   const section = productsRender.closest(".group-products");
@@ -65,7 +71,7 @@ function renderDots(arr, productsRender) {
   };
 }
 
-export function renderPaginationList(arr) {
+export function renderPaginationList(arr ,currentPage = 1 ,  productsPerPage = 8) {
   const renderDiv = document.querySelector(".shop__render-pagination-count");
   const paginationDiv = document.querySelector(".pagination");
 
@@ -84,7 +90,7 @@ export function renderPaginationList(arr) {
     btnHtml.dataset.page = index + 1
     btnHtml.textContent = `${index + 1}`;
     if (currentPage === index + 1) {
-      btnHtml.classList.add("active");
+      btnHtml.classList.add("activeItem");
     }
 
     renderDiv.append(btnHtml);

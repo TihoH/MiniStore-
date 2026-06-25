@@ -53,7 +53,7 @@ function updateProducts() {
     result = result.filter((item) => item.brand === selectedBrand);
   }
 
-  renderPaginationList(result);
+  renderPaginationList(result , currentPage ,  productsPerPage);
   pagesCount = Math.ceil(result.length / productsPerPage);
   const sliceStart = (currentPage - 1) * productsPerPage;
   const sliceEnd = currentPage * productsPerPage;
@@ -174,6 +174,7 @@ paginationArrowPrev.addEventListener("click", () => {
   if (currentPage <= 1) return;
 
   currentPage--;
+  
   updateProducts();
 });
 

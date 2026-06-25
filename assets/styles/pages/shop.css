@@ -47,9 +47,6 @@
 }
 
 
-.activeItem{
-    color: var(--price);
-}
 .shop__search{
     display: flex;
     outline: none;
@@ -74,13 +71,22 @@
   align-items: center;
   justify-content: center;
   gap: 18px;
+      margin-top: 60px;
 }
 .shop__render-pagination-count{
     display: flex;
-    gap: 10px;
+    gap: 30px;
+
 }
+
 .shop__render-pagination-count button{
    background-color: transparent;
+       color: var(--colorPagination);
+       font-size: 20px;
+       font-weight: 400;
+}
+.shop__render-pagination-count .activeItem{
+    color: var(--price);
 }
 .pagination__arrow,
 .pagination__page {
@@ -116,4 +122,15 @@
 
 .pagination__page.active {
   color: #72aec8;
+}
+
+.pagination__arrow {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pagination__arrow svg {
+  width: 36px;
+  height: 46px;
 }
