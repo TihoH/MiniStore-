@@ -1,8 +1,7 @@
 let activeIndexDots = 0;
-// let currentPage = 1;
-// const productsPerPage = 8;
 
-const groupProductsItem = document.querySelector('.group-products__item')
+
+const groupProductsItem = document.querySelector(".group-products__item");
 
 export function renderProducts(
   arr,
@@ -21,17 +20,15 @@ export function renderProducts(
             </a>
             <div class='group-products__info-product'> 
                 <span> ${item.title} </span> 
-                <span class="group-products__price">$ ${item.price} </span> 
+                <span class="group-products__price">$ ${item?.variants?.[0]?.price} </span> 
             </div>
             <button data-id=${item.id} class="group-products__add-product baseBtn-black"> Add to cart  </button>
         `;
     mobileProductsRender.append(li);
-
   });
 
   if (activeDots) renderDots(arr, mobileProductsRender);
 }
-
 
 function renderDots(arr, productsRender) {
   const section = productsRender.closest(".group-products");
@@ -71,7 +68,11 @@ function renderDots(arr, productsRender) {
   };
 }
 
-export function renderPaginationList(arr ,currentPage = 1 ,  productsPerPage = 8) {
+export function renderPaginationList(
+  arr,
+  currentPage = 1,
+  productsPerPage = 8,
+) {
   const renderDiv = document.querySelector(".shop__render-pagination-count");
   const paginationDiv = document.querySelector(".pagination");
 
@@ -85,9 +86,9 @@ export function renderPaginationList(arr ,currentPage = 1 ,  productsPerPage = 8
 
   const pagesCount = Math.ceil(arr.length / productsPerPage);
 
-  [...new Array(pagesCount)].forEach(( _, index) => {
+  [...new Array(pagesCount)].forEach((_, index) => {
     const btnHtml = document.createElement("button");
-    btnHtml.dataset.page = index + 1
+    btnHtml.dataset.page = index + 1;
     btnHtml.textContent = `${index + 1}`;
     if (currentPage === index + 1) {
       btnHtml.classList.add("activeItem");

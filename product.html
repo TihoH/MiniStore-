@@ -30,7 +30,7 @@
       </div>
     </header>
 
-    <main class="container">
+    <main class="container product__main-container">
       <section class="product">
         <div class="product__wrapper-image">
           <img
@@ -76,7 +76,7 @@
             </div>
             <div class="product__buttons">
               <button class="baseBtn-black baseBtn-blue">Buy now</button>
-               <button class="baseBtn-black">Add to cart</button>
+               <button class="baseBtn-black product__aded-in-cart">Add to cart</button>
             </div>
             <div class="product__more-info">
               <span class="product__info-catogory"></span>
@@ -86,6 +86,41 @@
             </div>
           </div>
         </section>
+      </section>
+      <section class="product__addInfo-aboutProduct">
+        <div class="product__render-title-addInfo">
+          <h2 class="product__descriptionAboutProduct">Description</h2>
+          <h2 class="product__addInfoAboutProduct">Additional information</h2>
+          <h2 class="product__reviewsAboutProduct"></h2>
+        </div>
+        <ul class="product__render-addInfo-text">
+          
+        </ul>
+      </section>
+      <section>
+      <!-- Рендер JS Mobille-->
+      <section class="mobile-products group-products container">
+        <div class="group-products__info">
+          <h2>Related Products</h2>
+          <button>Go to Shop</button>
+        </div>
+      <!-- Рендер JS Mobille-->
+        <ul class="product__render group-products__render "></ul>
+        <div class="group-products__render-dots"></div>
+      </section>
+      </section>
+            <!-- subscribe -->
+      <section class="subscribe container">
+        <div class="subscribe__title">
+          <h3>Subscribe Us now</h3>
+          <p>
+            Get latest news, updates and deals directly mailed to your inbox.
+          </p>
+        </div>
+        <div class="subscribe__submitEmail">
+          <input type="text" placeholder="Your email address here" />
+          <button>subscribe</button>
+        </div>
       </section>
     </main>
     <footer class="footer">

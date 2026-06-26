@@ -1,9 +1,15 @@
+import { renderProducts } from "../app.js/renderProducts.js";
+import { userCart } from "../cart.js";
 import { products } from "../data.js";
 
 const params = new URLSearchParams(document.location.search);
 const id = params.get("id");
 
 const currentProduct = products.find((elem) => elem.id === Number(id));
+
+const relatedProducts = [...products].filter(elem => elem.tags.includes(currentProduct.tags[0]))
+
+console.log(relatedProducts)
 
 const product = document.querySelector(".product");
 const productImage = product.querySelector(".product__image");
@@ -13,14 +19,27 @@ const price = product.querySelector(".product__price");
 const description = product.querySelector(".product__description");
 const renderColor = product.querySelector(".product__render-color");
 const renderSize = product.querySelector(".product__render-size");
+const productSizeWrapp = document.querySelector(".product__size");
 const productQuantityStock = product.querySelector(".product__quantity-stock");
 const changeStock = product.querySelector(".product__changeSctock");
-const productInfoCategory = document.querySelector('.product__info-catogory')
-const renderTags = document.querySelector('.product__renderTags')
+const productInfoCategory = document.querySelector(".product__info-catogory");
+const renderTags = document.querySelector(".product__renderTags");
+const adedInCart = document.querySelector(".product__aded-in-cart");
+const renderInfoAdedProduct = document.querySelector(
+  ".product__render-title-addInfo",
+);
+const productRenderAddInfoText = document.querySelector(
+  ".product__render-addInfo-text",
+);
+const reviews = document.querySelector(".product__reviewsAboutProduct");
 
 let productColor = currentProduct?.colors?.[0];
 let productSize = currentProduct?.variants?.[0]?.size;
 let productQuantity = 1;
+let textRenderAdedInfoText = currentProduct.fullDescription;
+
+productRenderAddInfoText.innerText = textRenderAdedInfoText;
+reviews.innerHTML = `Reviews (${currentProduct.reviews.length})`;
 
 function renderProduct() {
   if (!currentProduct) return;
@@ -32,16 +51,24 @@ function renderProduct() {
   rating.textContent = currentProduct.rating;
   price.textContent = `$${currentVariant.price}`;
   description.textContent = currentProduct.description;
-  productQuantityStock.textContent = currentVariant.stock; 
+  productQuantityStock.textContent = currentVariant.stock;
   changeStock.innerText = productQuantity;
-  productInfoCategory.innerText = `Category: ${currentProduct.category[0].toUpperCase() + currentProduct.category.slice(1)}`
+  productInfoCategory.innerText = `Category: ${currentProduct.category[0].toUpperCase() + currentProduct.category.slice(1)}`;
+
+  const plusBtn = product.querySelector(".adedQuantityBtn");
+
+  if (productQuantity >= currentVariant.stock) {
+    plusBtn?.classList.add("disabled");
+  } else {
+    plusBtn?.classList.remove("disabled");
+  }
 
   renderColorsList();
   renderSizeList();
-  renderTagsProduct()
+  renderTagsProduct();
 }
 function renderTagsProduct() {
-  renderTags.textContent = `Tags: ${currentProduct.tags.join(", ") }`;
+  renderTags.textContent = `Tags: ${currentProduct.tags.join(", ")}`;
 }
 
 function renderColorsList() {
@@ -65,8 +92,13 @@ function renderColorsList() {
 }
 
 function renderSizeList() {
-  if (!currentProduct.variants) return;
-
+  if (
+    !currentProduct?.variants?.length ||
+    currentProduct.variants[0].size.includes("One Size")
+  ) {
+    productSizeWrapp.remove();
+    return;
+  }
   renderSize.innerHTML = "";
 
   currentProduct.variants.forEach((elem) => {
@@ -83,39 +115,84 @@ function renderSizeList() {
     renderSize.append(li);
   });
 }
-
 product.addEventListener("click", (e) => {
   const changeColor = e.target.closest(".product__color-item");
   const changeSize = e.target.closest(".product__sizes-item");
   const adedQuantityBtn = e.target.closest(".adedQuantityBtn");
   const deleteQuantity = e.target.closest(".deleteQuantity");
-  const currentVariant = getCurrentVariant();
 
   if (changeColor) {
     productColor = changeColor.dataset.color;
-    renderColorsList();
   }
 
   if (changeSize) {
     productSize = changeSize.dataset.size;
-    const currentVariant = getCurrentVariant();
-    price.textContent = `$${currentVariant.price}`;
     productQuantity = 1;
-    renderSizeList();
-    renderProduct();
   }
-  if (adedQuantityBtn) {
-    if (productQuantity < currentVariant.stock ) {
-      productQuantity++;
-    } else {
-      adedQuantityBtn.classList.add("disabled");
-    }
+
+  const currentVariant = getCurrentVariant();
+
+  if (adedQuantityBtn && productQuantity < currentVariant.stock) {
+    productQuantity++;
   }
-  if (deleteQuantity && productQuantity >= 0 ) {
+
+  if (deleteQuantity && productQuantity > 1) {
     productQuantity--;
   }
 
   renderProduct();
+});
+renderInfoAdedProduct.addEventListener("click", (e) => {
+  const title = e.target.closest(".product__descriptionAboutProduct");
+  const adedInfo = e.target.closest(".product__addInfoAboutProduct");
+  const reviews = e.target.closest(".product__reviewsAboutProduct");
+  productRenderAddInfoText.innerHTML = "";
+
+  const tabs = document.querySelectorAll('.product__descriptionAboutProduct , .product__addInfoAboutProduct , .product__reviewsAboutProduct')
+  
+  tabs.forEach( tab => tab.classList.remove('activeItem') )
+
+  if (title) {
+    title.classList.add('activeItem')
+    productRenderAddInfoText.innerHTML = `${currentProduct.fullDescription}`;
+  }
+  if (adedInfo) {
+     adedInfo.classList.add('activeItem')
+    productRenderAddInfoText.innerHTML = `${currentProduct.additionalInfo}`;
+  }
+  if (reviews) {
+     reviews.classList.add('activeItem')
+    const ul = document.createElement("ul");
+    ul.classList.add("product__reviews-list");
+
+    currentProduct.reviews.forEach((item) => {
+      const li = document.createElement("li");
+      li.classList.add("product__review-item");
+
+      li.innerHTML = `
+        <div class="product__review-top">
+          <h4 class="product__review-author">${item.author}</h4>
+          <span class="product__review-rating">
+            ${"★".repeat(item.rating)}${"☆".repeat(5 - item.rating)}
+          </span>
+        </div>
+
+        <p class="product__review-text">
+          ${item.text}
+        </p>
+      `;
+
+      ul.append(li);
+    });
+
+    productRenderAddInfoText.append(ul);
+  }
+});
+
+adedInCart.addEventListener("click", () => {
+  const adedUser = { ...currentProduct, quantity: productQuantity , color: productColor };
+  userCart.addProduct(adedUser);
+  console.log(userCart.getProducts());
 });
 
 function getCurrentVariant() {
@@ -125,3 +202,4 @@ function getCurrentVariant() {
 }
 
 renderProduct();
+renderProducts(relatedProducts , '.product__render' )
