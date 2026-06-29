@@ -165,10 +165,13 @@ renderInfoAdedProduct.addEventListener("click", (e) => {
     const ul = document.createElement("ul");
     ul.classList.add("product__reviews-list");
 
-    currentProduct.reviews.forEach((item) => {
+    currentProduct.reviews.forEach((item , index) => {
       const li = document.createElement("li");
       li.classList.add("product__review-item");
 
+      if(index === 0){
+         adedInfo.classList.add('activeItem')
+      }
       li.innerHTML = `
         <div class="product__review-top">
           <h4 class="product__review-author">${item.author}</h4>
