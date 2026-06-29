@@ -22,22 +22,21 @@
   font-weight: 400;
 }
 
-.group-products__info button {
+.group-products__info a {
   position: relative;
+  display: inline-block;
   background-color: white;
   text-transform: uppercase;
   font-weight: 400;
   font-size: 14px;
   cursor: pointer;
-  border: none;
-  padding-bottom: 5px;
 }
 
-.group-products__info button::before {
+.group-products__info a::before {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 10px;
 
   width: 100%;
   height: 2px;
@@ -46,7 +45,7 @@
   transition: 0.4s;
 }
 
-.group-products__info button:hover::before {
+.group-products__info a:hover::before {
   background-color: red;
 }
 .group-products__item img {

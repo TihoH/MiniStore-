@@ -75,6 +75,10 @@
     gap: 6px;
 }
 
+.product__stock-increment button:hover{
+    box-shadow: 0 0 10px rgb(187, 182, 182);
+}
+
 .product__stock-increment button{
     box-shadow: 0 0 10px rgb(230, 230, 230);
     width: 44px;
@@ -176,3 +180,4 @@
 .product__render-related-products{
     display: flex;
 }
+
