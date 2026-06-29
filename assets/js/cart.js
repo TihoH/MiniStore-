@@ -5,7 +5,7 @@ const headerCartLenth = document.querySelector(".header__cart-lenth");
 const allProducts = [...products].map((item) => ({ ...item, quantity: 1 }));
 
 export function cartUser() {
-  let cart = [];
+  let cart = JSON.parse(localStorage.getItem("cartIds")) || [];
 
   return {
     addProduct: (product) => {
@@ -17,10 +17,11 @@ export function cartUser() {
             ? { ...item, quantity: item.quantity + product.quantity }
             : item,
         );
-        
+      localStorage.setItem("cartIds", JSON.stringify(cart));
         return;
       }
       cart.push(product);
+      localStorage.setItem("cartIds", JSON.stringify(cart));
     },
 
     lengthCart() {
@@ -33,12 +34,15 @@ export function cartUser() {
     getProducts: () => {
       return cart;
     },
+    deleteProduct: (id) => {
+      cart = cart.filter( item => item.id != id )
+      localStorage.setItem("cartIds", JSON.stringify(cart));
+
+    }
   };
 }
 
 export const userCart = cartUser();
-
-
 
 document.addEventListener("click", (e) => {
   const adedInCartBtn = e.target.closest(".group-products__add-product");
@@ -49,6 +53,6 @@ document.addEventListener("click", (e) => {
 
   if (!findProduct) return;
   userCart.addProduct(findProduct);
-    updateCartLength()
+  updateCartLength();
   console.log(userCart.getProducts());
 });
