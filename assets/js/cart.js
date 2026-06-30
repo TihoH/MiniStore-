@@ -14,16 +14,17 @@ export function cartUser() {
       if (findProductsInCart) {
         cart = cart.map((item) =>
           item.id === product.id
-            ? { ...item, quantity: item.quantity + 1  }
+            ? { ...item, quantity: item.quantity + 1 }
             : item,
         );
         updateCartLength();
         localStorage.setItem("cartIds", JSON.stringify(cart));
         return;
       }
-      cart.push({...product });
+      cart.push({ ...product });
       localStorage.setItem("cartIds", JSON.stringify(cart));
       updateCartLength();
+      fullPriceCart();
     },
 
     lengthCart() {
@@ -53,9 +54,7 @@ export function cartUser() {
     },
     fullPriceCart: () => {
       return cart.reduce((acc, elem) => {
-                console.log(elem)
         acc = acc + elem.price.price * elem.quantity;
-
         return acc;
       }, 0);
     },
@@ -70,10 +69,9 @@ document.addEventListener("click", (e) => {
 
   const idProduct = Number(adedInCartBtn.dataset.id);
   const findProduct = allProducts.find((elem) => elem.id === idProduct);
-  
 
   if (!findProduct) return;
-  console.log(findProduct)
-  userCart.addProduct({...findProduct , price: findProduct.variants[0] });
+  console.log(findProduct);
+  userCart.addProduct({ ...findProduct, price: findProduct.variants[0] });
   updateCartLength();
 });

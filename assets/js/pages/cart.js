@@ -63,6 +63,7 @@ cartProduct.addEventListener("click", (e) => {
   }
 
   renderCartProducts();
+  cartFulPrice.textContent = cart.fullPriceCart()
 });
 
 function renderButtons(product) {
@@ -80,6 +81,7 @@ function renderButtons(product) {
 }
 
 export function renderOverPriceProduct(product){
+  console.log(product)
   return product?.price.price * product.quantity
 }
 
