@@ -9,8 +9,6 @@ const currentProduct = products.find((elem) => elem.id === Number(id));
 
 const relatedProducts = [...products].filter(elem => elem.tags.includes(currentProduct.tags[0]))
 
-console.log(relatedProducts)
-
 const product = document.querySelector(".product");
 const productImage = product.querySelector(".product__image");
 const name = product.querySelector(".product__name");
@@ -134,6 +132,7 @@ product.addEventListener("click", (e) => {
 
   if (adedQuantityBtn && productQuantity < currentVariant.stock) {
     productQuantity++;
+    console.log('ffqqf')
   }
 
   if (deleteQuantity && productQuantity > 1) {
@@ -193,9 +192,8 @@ renderInfoAdedProduct.addEventListener("click", (e) => {
 });
 
 adedInCart.addEventListener("click", () => {
-  const adedUser = { ...currentProduct, quantity: productQuantity , color: productColor };
-  userCart.addProduct(adedUser);
-  console.log(userCart.getProducts());
+  const adedProduct = { ...currentProduct, quantity: productQuantity , color: productColor , price: getCurrentVariant() };
+  userCart.addProduct(adedProduct);
 });
 
 function getCurrentVariant() {

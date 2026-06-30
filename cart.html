@@ -21,11 +21,11 @@
           <div class="header__iacons">
             <img src="./assets/images/icons/ion_search.svg" alt="" />
             <img src="./assets/images/icons/ion_person.svg" alt="" />
-            <div class="header__cart">
+            <a href="/cart.html" class="header__cart">
               <img src="./assets/images/icons/cart.svg" alt="" />
               <span class="header__cart-lenth"></span>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </header>
@@ -45,6 +45,37 @@
         <div>Subtotal</div>
       </div>
       <ul class="cart__render-products"></ul>
+      <section class="cart__info">
+        <h2>Cart totals</h2>
+        <div class="cart__info-cell">
+          <h3>Subtotal</h3>
+          <span class="cart__full-price"></span>
+        </div>
+        <div class="cart__info-cell cart__info-cell-last">
+          <h3>Total</h3>
+          <span>еще бабки</span>
+        </div>
+        <div>
+          <button class="baseBtn-black">Update cart</button>
+          <a href="/Shop.html">
+            <button class="baseBtn-black">Continue shopping</button>
+          </a>
+          <button class="baseBtn-black">Proceed to checkout</button>
+        </div>
+      </section>
+            <!-- subscribe -->
+      <section class="subscribe cart__subscribe container">
+        <div class="subscribe__title">
+          <h3>Subscribe Us now</h3>
+          <p>
+            Get latest news, updates and deals directly mailed to your inbox.
+          </p>
+        </div>
+        <div class="subscribe__submitEmail">
+          <input type="text" placeholder="Your email address here" />
+          <button>subscribe</button>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">

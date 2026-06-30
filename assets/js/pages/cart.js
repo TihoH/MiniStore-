@@ -2,7 +2,11 @@ import { userCart as cart } from "../cart.js";
 
 const renderProducts = document.querySelector(".cart__render-products");
 const cartProduct = document.querySelector(".cart__render-products");
+const cartFulPrice = document.querySelector('.cart__full-price')
+  const cartIds = JSON.parse(localStorage.getItem("cartIds")) || [];
 
+
+  cartFulPrice.textContent = cart.fullPriceCart()
 
 function renderCartProducts() {
   const cartIds = JSON.parse(localStorage.getItem("cartIds")) || [];
@@ -18,13 +22,13 @@ function renderCartProducts() {
             <img class="cart__product-image" src="${product.image}"> 
             <div> 
               <span class="cart__product-name"> ${product.title}</span> 
-              <span class="cart__product-price"> $${product?.variants?.[0].price}</span> 
+              <span class="cart__product-price"> $${product?.price?.price}</span> 
             </div>
           </div>
           <div> ${renderButtons(product)} </div>
           <div class="cart__product-over-price">
             <span> ${renderOverPriceProduct(product)} $ </span> 
-            <span class="cart__deleteProduct" data-id="${product.id}"> x </span>
+            <span class="cart__deleteProduct" data-id="${product.id}"> <img src="./assets/images/icons/close.svg" /> </span>
           </div>
 
       `;
@@ -50,6 +54,7 @@ cartProduct.addEventListener("click", (e) => {
     if (findProduct) {
       cart.addProduct(findProduct);
     }
+    console.log(findProduct)
     
   }
   if(deleteQuantity){
@@ -74,8 +79,9 @@ function renderButtons(product) {
       </div>`;
 }
 
-function renderOverPriceProduct(product){
-  return product?.variants?.[0].price * product.quantity
+export function renderOverPriceProduct(product){
+  return product?.price.price * product.quantity
 }
+
 
 renderCartProducts();
